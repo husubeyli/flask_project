@@ -1,0 +1,75 @@
+/* navbar content */
+.active-imp {
+    color: white !important;
+}
+
+
+/* register form labels */
+
+.register-form > label {
+    margin-top: .5rem !important;
+    margin-bottom: 0 !important;
+}
+
+
+
+
+/* for minus plus button */
+.inputCount{
+    width: 15vh;
+    height: 35px;
+    border: 1px solid rgb(214, 213, 213);
+}
+.btnSize{
+    width:45px;
+    border-radius:4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnSize:focus, .inputCount:focus {
+    /* border: none; */
+    outline: 0;
+    font-size: .3em;
+}
+.page-footer {
+    border-top: 1px solid white;
+}
+.slick-prev:before {
+    content: '←';
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev {
+    left: -25px;
+}
+@media(max-width: 992px){
+    .collapse:not(.show) {
+        display: none !important;
+    }
+}

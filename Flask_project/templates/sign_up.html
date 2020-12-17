@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block links_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Register form</title>
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-6 card">
+        <div class="card-header">
+            Qeydiyyat bölməsi
+          </div>
+        <form method="POST" action="{{ url_for('register') }}">
+            {{ form.csrf_token() }}
+            <dl class="register-form">
+                {{ render_field(form.first_name) }}
+                {{ render_field(form.last_name) }}
+                {{ render_field(form.email) }}
+                {{ render_field(form.password) }}
+            </dl>
+            <input type="submit" value="Göndər" class="btn btn-primary mb-3 col-md-12">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block links_js %}
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
+{% endblock %}
+
+<div class="Form__field__qH Form__field__qH--Red --d-flex" id="currency_selector_list"> 
+    <div class="form__fields"> <div class="selector expanded"> 
+        <input class="selector__value" name="currency" type="hidden" data-value="" value="1"> 
+        <div class="selector__opener px-15 c-point  bg-white"> 
+            <span class="selected_value font-14 font-s ">AZN</span>
+            <span class="pl-15"></span> 
+            <div class="selector__arrows"> 
+                <span class="fa fa-angle-up selector__arrows--up d-none text-red font-24"></span> 
+                <span class="fa fa-angle-down selector__arrows--down text-red font-24"></span>
+            </div> </div> <div class="selector__list bg-white" style="display: none;"> <div class="listG Rm--lst-pd"> <div class="selector__list-option list font-14 font-s " data-value="AZN" data-id="1" data-curr-value="1" style="display: none;"> AZN </div> <div class="selector__list-option list font-14 font-s " data-value="USD" data-id="18" data-curr-value="1.7020"> USD </div> <div class="selector__list-option list font-14 font-s " data-value="EUR" data-id="11" data-curr-value="2.0295"> EUR </div> </div> </div> </div> </div> <!-- FormErrorMessage --> <div class="Form__field__qH--errorMessage font-14 font-s-light text-light-red pl-15 pt-1 gap_d_none">not_error</div> <!-- /FormErrorMessage --> <div class="pt-10 gap_d_none"></div> </div>
